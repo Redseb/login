@@ -8,8 +8,6 @@ $password = $_POST['password'];
 $validUser = "username";
 $validPassword = "1234";
 
-echo "You have passed username: $username and a password of : $password";
-
 if ($username == $validUser && $password == $validPassword){
     $_SESSION['logged_in'] = TRUE;
     header('location: index.php');
