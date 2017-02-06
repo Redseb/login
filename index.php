@@ -84,9 +84,13 @@ session_start();
             <?php
 
             if (ISSET($_SESSION['logged_in'])){
+                ?>
 
-                echo "SHOW THE LOGOUT BUTTON";
+                <form class="navbar-form navbar-right" action="logout.php" method="post">
+                    <button type="submit" class="btn btn-success">Logout</button>
+                </form>
 
+                <?php
             } else {
 
                 ?>
