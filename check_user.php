@@ -13,6 +13,7 @@ if ($username == $validUser && $password == $validPassword){
     header('location: index.php');
 
 } else {
+
     echo "Wrong Password or Username";
 }
 
