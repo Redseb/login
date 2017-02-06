@@ -83,7 +83,7 @@ session_start();
 
             <?php
 
-            if (ISSET($_SESSION['logged_in']){
+            if (ISSET($_SESSION['logged_in'])){
 
                 echo "SHOW THE LOGOUT BUTTON";
 
