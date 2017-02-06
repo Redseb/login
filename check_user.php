@@ -11,8 +11,9 @@ $validPassword = "1234";
 echo "You have passed username: $username and a password of : $password";
 
 if ($username == $validUser && $password == $validPassword){
-    echo "Welcome to the club pal!!";
     $_SESSION['logged_in'] = TRUE;
+    header('location: index.php');
+
 } else {
     echo "Wrong Password or Username";
 }

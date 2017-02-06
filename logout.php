@@ -2,6 +2,8 @@
 session_start();
 
 session_destroy();
+
+header('location: index.php');
 /**
  * Created by PhpStorm.
  * User: 18zyzanski_m
