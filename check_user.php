@@ -14,7 +14,16 @@ if ($username == $validUser && $password == $validPassword){
 
 } else {
 
-    echo "Wrong Password or Username";
+    $_SESSION['login_attempt'] = $SESSION['login_attempt'] + 1;
+
+    if($_SESSION['login_attempt'] < 3){
+        echo "Wrong Password or Username";
+    } else {
+        echo "YOU HAVE BEEN LOCKED OUT, PLEASE TRY AGAIN LATER";
+        $_SESSION['login_block'] = TRUE;
+
+    }
+
 }
 
 
