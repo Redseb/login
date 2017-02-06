@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+
+session_start();
+
+?>
+
 <html lang="en">
 <head>
 
@@ -75,16 +81,28 @@
         <div id="navbar" class="navbar-collapse collapse">
 
 
-            <form class="navbar-form navbar-right" action="check_user.php" method="post">
-                <div class="form-group">
-                    <input type="text" name = "username" placeholder="Username" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" name= "password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
+            <?php
 
+            if (ISSET($_SESSION['logged_in']){
+
+                echo "SHOW THE LOGOUT BUTTON";
+
+            } else {
+
+                ?>
+                <form class="navbar-form navbar-right" action="check_user.php" method="post">
+                    <div class="form-group">
+                        <input type="text" name="username" placeholder="Username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" placeholder="Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                </form>
+
+                <?php
+            }
+            ?>
 
         </div><!--/.navbar-collapse -->
     </div>
