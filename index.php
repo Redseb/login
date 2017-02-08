@@ -101,7 +101,16 @@ session_start();
                     <div class="form-group">
                         <input type="password" name="password" placeholder="Password" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-success">Sign in</button>
+                    <button type="submit" class="btn btn-success"
+
+                        <?php
+                        if ($_SESSION['login_locked']== TRUE){
+                            echo "Disabled";
+
+                        }
+                        ?>
+
+                    >Sign in</button>
                 </form>
 
                 <?php
