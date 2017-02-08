@@ -2,35 +2,34 @@
 session_start();
 
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$user_name = $_POST['email'];
+$user_password = $_POST['password'];
 
-$validUser = "username";
-$validPassword = "1234";
+$valid_user = "username";
+$valid_password = "1234";
 
-if ($username == $validUser && $password == $validPassword){
+if ($user_name == $valid_user && $user_password == $valid_password){
+
     $_SESSION['logged_in'] = TRUE;
     header('location: index.php');
 
 } else {
 
-    $_SESSION['login_attempt'] = $SESSION['login_attempt'] + 1;
+    $_SESSION['login_attempt'] = ($_SESSION['login_attempt'] +1);
+    $login_attempt = $_SESSION['login_attempt'];
+    echo "failed attempt: $login_attempt";
+    if($login_attempt == 2){
 
-    if($_SESSION['login_attempt'] < 3){
-        echo "Wrong Password or Username";
-    } else {
-        echo "YOU HAVE BEEN LOCKED OUT, PLEASE TRY AGAIN LATER";
-        $_SESSION['login_block'] = TRUE;
+        $_SESSION['login_locked'] = TRUE;
+        echo "<br /> You have been logged out. punk. stop screwing around >:(";
 
     }
-
 }
-
-
 
 /**
  * Created by PhpStorm.
- * User: 18zyzanski_m
- * Date: 03/02/17
- * Time: 09:12
+ * User: BMacKenty
+ * Date: 06/02/17
+ * Time: 14:16
  */
+?>
