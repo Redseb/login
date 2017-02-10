@@ -14,7 +14,7 @@ session_start();
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Welcome</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
@@ -76,45 +76,43 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">CompSci practice</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 
-
             <?php
 
-            if (ISSET($_SESSION['logged_in'])){
+            if(ISSET($_SESSION['logged_in'])){
+
                 ?>
 
                 <form class="navbar-form navbar-right" action="logout.php" method="post">
-                    <button type="submit" class="btn btn-success">Logout</button>
+                    <button type="submit" class="btn btn-success">logout</button>
                 </form>
 
                 <?php
+
             } else {
 
                 ?>
+
                 <form class="navbar-form navbar-right" action="check_user.php" method="post">
                     <div class="form-group">
-                        <input type="text" name="username" placeholder="Username" class="form-control">
+                        <input type="email" name="email" placeholder="Email" class="form-control">
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" placeholder="Password" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-success"
 
-                        <?php
-                        if ($_SESSION['login_locked']== TRUE){
-                            echo "Disabled";
-
-                        }
-                        ?>
+                        <?php if($_SESSION['locked_out'] == TRUE) {echo "disabled"; } ?>
 
                     >Sign in</button>
                 </form>
 
                 <?php
             }
+
             ?>
 
         </div><!--/.navbar-collapse -->
@@ -125,7 +123,7 @@ session_start();
 <div class="jumbotron">
     <div class="container">
         <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p>This is a website where we explore a practical side of PHP and programming</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
     </div>
 </div>
@@ -134,8 +132,8 @@ session_start();
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <h2>About</h2>
+            <p>This is for Mr. MacKenty's computer science class</p>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
