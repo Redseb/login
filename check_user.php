@@ -2,10 +2,10 @@
 session_start();
 
 
-$user_name = $_POST['email'];
+$user_name = $_POST['username'];
 $user_password = $_POST['password'];
 
-$valid_user = "bmackenty@aswarsaw.org";
+$valid_user = "username";
 $valid_password = "1234";
 
 if ($user_name == $valid_user && $user_password == $valid_password){
