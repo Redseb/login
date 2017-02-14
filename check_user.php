@@ -11,6 +11,7 @@ $valid_password = "1234";
 if ($user_name == $valid_user && $user_password == $valid_password){
 
     $_SESSION['logged_in'] = TRUE;
+    $_SESSION['username'] = $user_name;
     header('location: index.php');
 
 } else {
